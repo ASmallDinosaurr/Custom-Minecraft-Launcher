@@ -1,0 +1,23 @@
+{
+    "name": "tsp-minecraft-launcher",
+    "version": "1.0.0",
+    "author": "ASmallDinosaur",
+    "description": "Launcher for TSP server",
+    "main": "main.js",
+    "devDependencies": {
+        "electron": "^9.0.5",
+        "electron-builder": "^22.7.0"
+    },
+    "scripts": {
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder"
+    },
+    "build": {
+        "appId": "com.tspmclauncher.quickstart",
+        "win": {
+            "target": "portable",
+            "icon": "resources/minecraft.ico"
+        }
+    }
+}

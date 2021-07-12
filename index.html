@@ -1,0 +1,95 @@
+<head>
+    <title>Minecraft Launcher</title>        
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<body> 
+    <!--SETTINGS-->  
+    <div class="settings" id="settings">
+        <i onclick="link_Settings()" class="fa fa-times linkbtn" title="Close" style="position:absolute;top:10px;right:12px;color:black"></i>  <!--CLOSE BUTTON-->
+        <div style="padding:20px">              
+            <!--TITLE-->
+            <i class="fa fa-gear fa-spin" style="float:left;margin-right:10px;margin-top:2px;color:#000000;font-size:25px"></i>
+            <h1 style="color:black;font-size:25px">SETTINGS</h1> 
+            </br></br>
+    
+            <!--RAM SLIDER-->
+            <i class="fa fa-heart btn" style="float:left;padding-right:10px;padding-top:2px;color:#000000"></i>
+            <h1 style="color:black;">MEMORY</h1>
+            </br> 
+            <input type="range" min="1" max="32" value="4" step="1" class="slider" id="input_slider">
+            <div style="text-align:center;padding-top:5px"><p style="color:black"><span id="output"></span> GB</p></div>                
+            <script>
+                var slider=document.getElementById("input_slider");
+                var output=document.getElementById("output");
+                output.innerHTML=slider.value;                    
+                slider.oninput=function() {output.innerHTML=this.value};
+            </script>
+            </br>
+            
+            <!--JAVA-->
+            <i class="fa fa-file btn" style="float:left;padding-right:10px;padding-top:2px;padding-bottom:6px;color:#000000"></i>
+            <h1 style="color:black;">JAVA</h1>
+            <input style="background-color:rgb(224, 224, 224);color:black;" type="text" id="input_java" placeholder="Custom Directory for Javaw" pattern="[a-zA-Z0-9_.@]{2,64}" title="Custom directory to Javaw.exe" required/> 
+            </br></br>
+    
+            <!--GAME-->
+            <i class="fa fa-folder btn" style="float:left;padding-right:10px;padding-top:2px;padding-bottom:6px;color:#000000"></i>
+            <h1 style="color:black;">GAME</h1>
+            <input style="background-color:rgb(224, 224, 224);color:black;padding-bottom:4px;" type="text" id="input_game" placeholder="Custom Directory for Minecraft" pattern="[a-zA-Z0-9_.@]{2,64}" title="Custom Directory for Minecraft Game Files" required/> 
+            </br></br>
+            
+            <!--USER-->
+            <i class="fa fa-folder btn" style="float:left;padding-right:10px;padding-top:2px;padding-bottom:6px;color:#000000"></i>
+            <h1 style="color:black;">USER</h1>
+            </br> 
+            <input style="background-color:rgb(224, 224, 224);color:black" type="text" id="input_user" placeholder="Custom Directory for User Files" pattern="[a-zA-Z0-9_.@]{2,64}" title="Custom Directory for User Files. Such as Saves or Texture Packs" required/> 
+            </br></br>
+    
+            <!--ARGS-->
+            <i class="fa fa-fire btn" style="float:left;padding-right:10px;padding-top:2px;padding-bottom:6px;color:#000000"></i>
+            <h1 style="color:black;">ARGUMENTS</h1>
+            </br> 
+            <input style="background-color:rgb(224, 224, 224);color:black" type="text" id="input_args" placeholder="Custom JVM Arguments" pattern="[a-zA-Z0-9_.@]{2,64}" title="Custom arguments to run minecraft with." required/> 
+        </div>
+    </div>
+
+    </br>
+    <!--Header-->
+    <div class="animate__animated animate__bounce" style="text-align:center">
+        <a><img onclick="link_TSP()" style="width:50%" src="resources/tsplogo.png"></img></a>       
+    </div>
+
+    <!--Form-->
+    <form onSubmit="playButton();return false" class="animate__animated animate__slideInLeft animate__faster" style="padding:20px" >
+        <i class="fa fa-arrow-right btn"></i><h1>LOGIN</h1> 
+        </br> 
+        <input type="text" id="input_email" placeholder="Email/Username..." pattern="[a-zA-Z0-9_.@]{2,64}" title="Two or more characters, no spaces, no symbols." required/> 
+        </br></br>  
+        <input type="password" id="input_password" placeholder="Password..." pattern="[a-zA-Z0-9!@#$%^*'_()|\/,.]{2,64}" title="Two or more characters"/> 
+        </br></br> 
+        <p id="output_loginmsg" style="color:rgb(246, 74, 74)"><a onclick="link_Forgot()">Forgot Password?</a></p>           
+        </br></br> 
+        <i class="fa fa-arrow-right btn"></i><h1>VERSION</h1> 
+        </br>
+        <select id="input_version" required>
+            <option value="Vanilla">Vanilla (1.16)</option>
+            <option value="Optifine">Optifine (1.16)</option>
+            <option value="Modded">Modded (1.12)</option>
+        </select>
+        </br></br>
+        <button id="output_button" type="submit">PLAY</button>  
+    </form>  
+    
+    <!--Links-->
+    <div style="width:100%;text-align:center" class="animate__animated animate__slideInUp animate__faster">            
+        <i onclick="link_TSP()" class="fa fa-external-link linkbtn" title="TSP Website"></i>
+        <i onclick="link_Discord()" class="fa fa-discord linkbtn" title="TSP Discord"></i>
+        <i onclick="link_TeamSpeak()" class="fa fa-microphone linkbtn" title="TSP TeamSpeak"></i>
+        <i onclick="link_Settings()" class="fa fa-gear fa-spin linkbtn" title="Settings"></i>
+    </div>       
+</body>

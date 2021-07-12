@@ -1,0 +1,8 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.tspmclauncher.quickstart
+win:
+  target: portable
+  icon: resources/minecraft.ico
+electronVersion: 9.0.5
